@@ -20,43 +20,49 @@ const message = `
 
 ❤️ Майя...
 
-Бул сайтты жөн эле ачкан жоксуң.
+Бул сайтты жөн эле ачкан жоксуң...
 
 Бул жерде менин жүрөгүмдүн үнү жашайт.
 
-Мен сени капа кылган болсом,
-чын жүрөктөн кечирим сурайм.
+Балким мен көп ката кетирдим.
 
-Сени абдан сагындым.
+Балким сени капа кылдым.
 
-Эгер мүмкүнчүлүк берсең,
-баарын кайра баштагым келет.
+Бирок бир күн да сени ойлобой өткөн жок.
 
-❤️
+Сенин күлкүңдү,
+үнүңдү,
+көздөрүңдү,
+жаныңдагы ар бир көз ирмемди абдан сагындым.
+
+Мен өткөндү өзгөртө албайм.
+
+Бирок келечекти экөөбүз чогуу жаза алабыз.
+
+❤️ Чын жүрөктөн кечирим сурайм.
+
+Эгер мүмкүнчүлүк берсең...
+
+Баарын кайрадан баштагым келет.
 
 `;
 
 let i = 0;
 
 function typeWriter() {
-
-if (i < message.length) {
-
-document.getElementById("typing").innerHTML += message.charAt(i);
-
-i++;
-
-setTimeout(typeWriter, 35);
-
-}
-
+    if (i < message.length) {
+        document.getElementById("typing").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 35);
+    }
 }
 
 typeWriter();
 
 document.getElementById("nextBtn").onclick = showGallery;
 
-});function showGallery() {
+});
+function showGallery() {
 
 document.body.innerHTML = `
 <div class="hearts"></div>
@@ -68,7 +74,7 @@ document.body.innerHTML = `
 <img id="photo" src="images/photo1.jpg">
 
 <p class="text">
-Ар бир сүрөт биздин эң сонун эскерүүбүз. ❤️
+Ар бир сүрөттө биздин эң сонун көз ирмемдер жашайт... ❤️
 </p>
 
 <button id="continue">❤️ Улантуу ❤️</button>
@@ -119,7 +125,7 @@ document.body.innerHTML = `
 
 📍 Аянт
 
-Мен ошол жерде сени күтөм.
+Мен ошол жерде сени чыдамсыздык менен күтөм.
 
 ❤️ Келесиңби?
 
@@ -147,50 +153,81 @@ document.body.innerHTML = `
 
 <p class="text">
 
-Сенин "Ооба" дегениң мен үчүн эң чоң белек.
+Бул мен үчүн эң сонун белек.
 
-Мен ошол күнү сени чыдамсыздык менен күтөм. ❤️
+Мен ошол күнү сени чыдамсыздык менен күтөм.
+
+❤️
 
 </p>
 
 </div>
 `;
+};
+    document.getElementById("yesBtn").onclick = () => {
 
-};const noBtn = document.getElementById("noBtn");
+document.body.innerHTML = `
+<div class="hearts"></div>
+
+<div class="container">
+
+<h1>❤️ Рахмат ❤️</h1>
+
+<p class="text">
+
+Бул мен үчүн эң сонун белек.
+
+Мен ошол күнү сени чыдамсыздык менен күтөм.
+
+❤️
+
+</p>
+
+</div>
+`;
+};
+
+const noBtn = document.getElementById("noBtn");
 
 let escapeCount = 0;
 
 const messages = [
-    "🥺 Сураныч, дагы ойлончу...",
-    "❤️ Мен сени күтөм...",
-    "😅 Мени кармай албайсың...",
-    "💖 Балким «Ооба» десеңчи...",
-    "🥰 Акыркы жолу сурайм..."
+"🥺 Сураныч, дагы ойлончу...",
+"❤️ Мен сени күтөм...",
+"😅 Мени кармай албайсың...",
+"💖 Балким «Ооба» десеңчи...",
+"🥰 Акыркы жолу сурайм..."
 ];
 
 noBtn.addEventListener("mouseover", () => {
 
-    if (escapeCount >= 5) {
-        noBtn.innerHTML = "❤️ Макул, барам ❤️";
-        noBtn.style.position = "static";
-        noBtn.style.background = "#28a745";
+if (escapeCount >= 5) {
 
-        noBtn.onclick = () => {
-            document.getElementById("yesBtn").click();
-        };
+noBtn.innerHTML = "❤️ Макул, барам ❤️";
 
-        return;
-    }
+noBtn.style.position = "static";
 
-    noBtn.innerHTML = messages[escapeCount];
+noBtn.style.background = "#28a745";
 
-    escapeCount++;
+noBtn.onclick = () => {
+document.getElementById("yesBtn").click();
+};
 
-    const x = Math.random() * (window.innerWidth - 220);
-    const y = Math.random() * (window.innerHeight - 100);
+return;
 
-    noBtn.style.position = "absolute";
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+}
+
+noBtn.innerHTML = messages[escapeCount];
+
+escapeCount++;
+
+const x = Math.random() * (window.innerWidth - 220);
+const y = Math.random() * (window.innerHeight - 100);
+
+noBtn.style.position = "absolute";
+noBtn.style.left = x + "px";
+noBtn.style.top = y + "px";
 
 });
+
+}
