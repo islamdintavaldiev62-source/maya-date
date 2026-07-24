@@ -11,7 +11,7 @@ document.body.innerHTML = `
 <p id="typing" class="text"></p>
 
 <button id="nextBtn">
-Улантуу ❤️
+❤️ Улантуу
 </button>
 
 </div>
@@ -20,9 +20,9 @@ document.body.innerHTML = `
 
 const message = `
 
-Бул сайтты ачканың үчүн рахмат.
+Бул сайтты ачканың үчүн рахмат...
 
-Бул жөн гана чакыруу эмес.
+Бул жөн гана сайт эмес.
 
 Бул менин жүрөгүмдөн чыккан сөздөр.
 
@@ -30,15 +30,11 @@ const message = `
 
 Чын жүрөктөн кечирим сурайм.
 
-Мен өткөндү өзгөртө албайм.
-
-Бирок келечекти өзгөртүү үчүн аракет кыла алам.
-
-Сен мен үчүн абдан кымбат адамсың.
-
 Мен сени сагындым.
 
-Кел, тагдырга дагы бир мүмкүнчүлүк берели... ❤️
+Кел...
+
+Тагдырга дагы бир мүмкүнчүлүк берели. ❤️
 
 `;
 
@@ -52,7 +48,7 @@ document.getElementById("typing").innerHTML += message.charAt(i);
 
 i++;
 
-setTimeout(typeWriter,35);
+setTimeout(typeWriter,40);
 
 }
 
@@ -66,10 +62,6 @@ document.getElementById("nextBtn").onclick = showGallery;
 
 
 
-// ======================
-// СҮРӨТТӨР
-// ======================
-
 function showGallery(){
 
 document.body.innerHTML = `
@@ -82,15 +74,13 @@ document.body.innerHTML = `
 
 <p class="text">
 
-Ар бир сүрөт —
-
-Биздин эң сонун эскерүүбүз. ❤️
+Биздин эң сонун эскерүүлөр ❤️
 
 </p>
 
 <button id="continue">
 
-Улантуу ❤️
+❤️ Улантуу
 
 </button>
 
@@ -98,7 +88,7 @@ document.body.innerHTML = `
 
 `;
 
-const photos = [
+const photos=[
 
 "images/photo1.jpg",
 
@@ -106,13 +96,11 @@ const photos = [
 
 "images/photo3.jpg",
 
-"images/photo4.jpg",
-
-"images/photo5.jpg"
+"images/photo4.jpg"
 
 ];
 
-let index = 0;
+let index=0;
 
 setInterval(()=>{
 
@@ -124,41 +112,41 @@ index=0;
 
 }
 
-document.getElementById("photo").src = photos[index];
+document.getElementById("photo").src=photos[index];
 
 },3000);
 
-document.getElementById("continue").onclick = showInvitation;
+document.getElementById("continue").onclick=showInvitation;
 
 }
 
 
 
-// ======================
-// ЧАКЫРУУ
-// ======================
-
 function showInvitation(){
 
-document.body.innerHTML = `
+document.body.innerHTML=`
 
 <div class="container">
 
-<h1 class="title">❤️ Майя ❤️</h1>
+<h1 class="title">
+
+❤️ Майя ❤️
+
+</h1>
 
 <p class="text">
 
 Эгер жүрөгүңдө мага кичинекей болсо да орун калган болсо...
 
-Кел, дагы бир жолу жолугалы.
+Дүйшөмбү күнү,
+
+саат 21:00
+
+Аянтта жолугалы.
+
+Мен сени күтөм. ❤️
 
 </p>
-
-<h2>📍 Дүйшөмбү</h2>
-
-<h2>🕘 21:00</h2>
-
-<h2>📍 Аянт</h2>
 
 <button id="yesBtn">
 
@@ -170,9 +158,9 @@ document.body.innerHTML = `
 
 `;
 
-document.getElementById("yesBtn").onclick = ()=>{
+document.getElementById("yesBtn").onclick=()=>{
 
-document.body.innerHTML = `
+document.body.innerHTML=`
 
 <div class="container">
 
@@ -184,17 +172,9 @@ document.body.innerHTML = `
 
 <p class="text">
 
-Бул жообуң мени абдан кубантты.
+Бул мен үчүн абдан маанилүү.
 
-Мен сени күтөм.
-
-📍 Дүйшөмбү
-
-🕘 21:00
-
-📍 Аянт
-
-❤️
+Мен сени чыдамсыздык менен күтөм. ❤️
 
 </p>
 
