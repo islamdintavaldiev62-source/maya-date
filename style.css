@@ -214,3 +214,78 @@ background-position:0 1500px;
 }
 
 }
+/* Сүрөт */
+
+#photo{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:20px;
+    margin-top:20px;
+    transition:1s;
+    box-shadow:0 0 35px rgba(255,255,255,.25);
+}
+
+/* Баскычтар */
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+#yesBtn{
+    background:#ff2d75;
+}
+
+#noBtn{
+    background:#555;
+}
+
+#musicBtn{
+    background:#7c3aed;
+}
+
+/* Жолугушуу */
+
+.meeting{
+    margin-top:35px;
+}
+
+.meeting h2,
+.meeting h3{
+    margin:12px 0;
+}
+
+.message p{
+    margin-top:15px;
+    line-height:1.8;
+}
+
+.message h2{
+    margin-top:25px;
+    color:#ff77aa;
+}
+
+/* Телефон үчүн */
+
+@media(max-width:600px){
+
+.title{
+    font-size:38px;
+}
+
+.text{
+    font-size:18px;
+}
+
+.container{
+    padding:25px;
+}
+
+button{
+    width:100%;
+}
+}
