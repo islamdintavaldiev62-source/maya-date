@@ -1,153 +1,90 @@
-// ❤️ MAYA DATE WEBSITE
-
-const openBtn = document.getElementById("openBtn");
-
-openBtn.addEventListener("click", () => {
-
-    document.body.innerHTML = `
-
-    <div class="container">
-
-        <h1 class="title">Майя... ❤️</h1>
-
-        <p id="typing" class="text"></p>
-
-        <button id="nextBtn">
-            ➜ Улантуу
-        </button>
-
-    </div>
-
-    `;
-
-    const message = `
-
-Бул сайтты ачканың үчүн рахмат.
-
-Бул жөн гана чакыруу эмес...
-
-Бул менин жүрөгүмдөн чыккан сөздөр.
-
-Эгер мен сени капа кылган болсом...
-
-Чын жүрөктөн кечирим сурайм.
-
-Мен кеткен каталарымды түшүндүм.
-
-Сен жөнүндө ойлобогон бир дагы күн болгон жок.
-
-❤️
-
-`;
-
-    let i = 0;
-
-    function typeWriter(){
-
-        if(i < message.length){
-
-            document.getElementById("typing").innerHTML += message.charAt(i);
-
-            i++;
-
-            setTimeout(typeWriter,40);
-
-        }
-
-    }
-
-    typeWriter();
-
-    setTimeout(()=>{
-
-        document.getElementById("nextBtn").onclick = ()=>{
-
-            showGallery();
-
-        }
-
-    },1000);
-
-});
-
-
-// =====================
-// Сүрөттөр бөлүмү
-// =====================
-
-function showGallery(){
+document.getElementById("continue").onclick = () => {
 
 document.body.innerHTML = `
 
 <div class="container">
 
-<h1 class="title">
+<h1 class="title">❤️ Майя... ❤️</h1>
 
-Биз... ❤️
-
-</h1>
-
-<img id="photo"
-
-src="images/photo1.jpg"
-
-style="width:100%;
-border-radius:20px;
-margin-top:20px;
-box-shadow:0 0 30px rgba(255,255,255,.3);">
+<h2>Кел, тагдырга дагы бир мүмкүнчүлүк берели.</h2>
 
 <p class="text">
-
-Ар бир сүрөт...
-
-Биздин эң сонун эскерүүбүз ❤️
-
+Эгер жүрөгүңдө мага кичинекей болсо да орун калган болсо...
 </p>
 
-<button id="continue">
+<h2>📍 Дүйшөмбү</h2>
 
-Улантуу ❤️
+<h2>🕘 Саат 21:00</h2>
 
+<h2>📍 Аянт</h2>
+
+<p class="text">
+Мен сени күтөм... ❤️
+</p>
+
+<div class="buttons">
+
+<button id="musicBtn">
+🎵 Биздин ыр
 </button>
+
+<button id="yesBtn">
+❤️ Ооба, барам
+</button>
+
+<button id="noBtn">
+🙈 Жок
+</button>
+
+</div>
 
 </div>
 
 `;
 
-const photos=[
+document.getElementById("musicBtn").onclick = () => {
+    window.open("https://youtu.be/JEYZLJz-Oig?si=Hx6vFiEPsfPbrav9", "_blank");
+};
 
-"images/photo1.jpg",
+const noBtn = document.getElementById("noBtn");
 
-"images/photo2.jpg",
+noBtn.addEventListener("mouseover", () => {
 
-"images/photo3.jpg",
+const x = Math.random() * (window.innerWidth - 150);
+const y = Math.random() * (window.innerHeight - 80);
 
-"images/photo4.jpg",
+noBtn.style.position = "absolute";
+noBtn.style.left = x + "px";
+noBtn.style.top = y + "px";
 
-"images/photo5.jpg"
+});
 
-];
+document.getElementById("yesBtn").onclick = () => {
 
-let index=0;
+document.body.innerHTML = `
 
-setInterval(()=>{
+<div class="container">
 
-index++;
+<h1 class="title">❤️ Рахмат ❤️</h1>
 
-if(index>=photos.length){
+<p class="text">
 
-index=0;
+Сенин жообуң мен үчүн абдан маанилүү.
 
-}
+Сени чыдамсыздык менен күтөм.
 
-document.getElementById("photo").src=photos[index];
+🌹❤️
 
-},3000);
+Дүйшөмбү, саат 21:00.
 
-document.getElementById("continue").onclick=()=>{
+Аянтта жолугушабыз.
 
-alert("4-бөлүктө жолугушууга чакыруу ачылат ❤️");
+</p>
 
-}
+</div>
 
-}
+`;
+
+};
+
+};
