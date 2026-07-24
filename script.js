@@ -1,90 +1,35 @@
-document.getElementById("continue").onclick = () => {
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Майя ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-document.body.innerHTML = `
-
-<div class="container">
-
-<h1 class="title">❤️ Майя... ❤️</h1>
-
-<h2>Кел, тагдырга дагы бир мүмкүнчүлүк берели.</h2>
-
-<p class="text">
-Эгер жүрөгүңдө мага кичинекей болсо да орун калган болсо...
-</p>
-
-<h2>📍 Дүйшөмбү</h2>
-
-<h2>🕘 Саат 21:00</h2>
-
-<h2>📍 Аянт</h2>
-
-<p class="text">
-Мен сени күтөм... ❤️
-</p>
-
-<div class="buttons">
-
-<button id="musicBtn">
-🎵 Биздин ыр
-</button>
-
-<button id="yesBtn">
-❤️ Ооба, барам
-</button>
-
-<button id="noBtn">
-🙈 Жок
-</button>
-
-</div>
-
-</div>
-
-`;
-
-document.getElementById("musicBtn").onclick = () => {
-    window.open("https://youtu.be/JEYZLJz-Oig?si=Hx6vFiEPsfPbrav9", "_blank");
-};
-
-const noBtn = document.getElementById("noBtn");
-
-noBtn.addEventListener("mouseover", () => {
-
-const x = Math.random() * (window.innerWidth - 150);
-const y = Math.random() * (window.innerHeight - 80);
-
-noBtn.style.position = "absolute";
-noBtn.style.left = x + "px";
-noBtn.style.top = y + "px";
-
-});
-
-document.getElementById("yesBtn").onclick = () => {
-
-document.body.innerHTML = `
+<div class="stars"></div>
+<div class="hearts"></div>
 
 <div class="container">
 
-<h1 class="title">❤️ Рахмат ❤️</h1>
+    <h1 class="title">❤️ Майя ❤️</h1>
 
-<p class="text">
+    <p class="text">
+        Бул жөн гана сайт эмес...
+    </p>
 
-Сенин жообуң мен үчүн абдан маанилүү.
+    <p class="text">
+        Бул менин жүрөгүмдөн чыккан кичинекей белек.
+    </p>
 
-Сени чыдамсыздык менен күтөм.
-
-🌹❤️
-
-Дүйшөмбү, саат 21:00.
-
-Аянтта жолугушабыз.
-
-</p>
+    <button id="openBtn">
+        ❤️ Сюрпризди ач ❤️
+    </button>
 
 </div>
 
-`;
+<script src="script.js"></script>
 
-};
-
-};
+</body>
+</html>
