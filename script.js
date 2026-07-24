@@ -3,6 +3,7 @@ const openBtn = document.getElementById("openBtn");
 openBtn.addEventListener("click", () => {
 
 document.body.innerHTML = `
+<div class="hearts"></div>
 
 <div class="container">
 
@@ -10,48 +11,53 @@ document.body.innerHTML = `
 
 <p id="typing" class="text"></p>
 
-<button id="nextBtn">
-❤️ Улантуу
-</button>
+<button id="nextBtn">❤️ Улантуу ❤️</button>
 
 </div>
-
 `;
 
 const message = `
 
-Бул сайтты ачканың үчүн рахмат...
+❤️ Майя...
 
-Бул жөн гана сайт эмес.
+Бул сайт жөн гана сөздөр эмес.
 
-Бул менин жүрөгүмдөн чыккан сөздөр.
+Бул менин жүрөгүмдөн чыккан сезимдер.
 
-Эгер мен сени капа кылган болсом...
+Балким мен сени капа кылдым.
 
-Чын жүрөктөн кечирим сурайм.
+Балким туура эмес кадамдарга бардым.
 
-Мен сени сагындым.
+Бирок бир нерсени түшүндүм...
+
+Сен мен үчүн өзгөчө адамсың.
+
+Сенин күлкүңдү,
+үнүңдү,
+көздөрүңдү,
+жаныңда өткөргөн ар бир көз ирмемди сагындым.
+
+Өткөндү өзгөртө албайм.
+
+Бирок бүгүн сага бир гана нерсе айткым келет...
+
+❤️ Чын жүрөктөн кечирим сурайм.
+
+Эгер жүрөгүңдө мага кичинекей болсо да орун калган болсо...
 
 Кел...
 
 Тагдырга дагы бир мүмкүнчүлүк берели. ❤️
-
 `;
 
 let i = 0;
 
-function typeWriter(){
-
-if(i < message.length){
-
-document.getElementById("typing").innerHTML += message.charAt(i);
-
-i++;
-
-setTimeout(typeWriter,40);
-
-}
-
+function typeWriter() {
+    if (i < message.length) {
+        document.getElementById("typing").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 35);
+    }
 }
 
 typeWriter();
@@ -60,126 +66,122 @@ document.getElementById("nextBtn").onclick = showGallery;
 
 });
 
-
-
-function showGallery(){
+function showGallery() {
 
 document.body.innerHTML = `
+<div class="hearts"></div>
 
 <div class="container">
 
-<h1 class="title">Биз... ❤️</h1>
+<h1>❤️ Биздин эскерүүлөр ❤️</h1>
 
 <img id="photo" src="images/photo1.jpg">
 
 <p class="text">
-
-Биздин эң сонун эскерүүлөр ❤️
-
+Ар бир сүрөттө биздин эң сонун көз ирмемдер жашайт...
 </p>
 
-<button id="continue">
-
-❤️ Улантуу
-
-</button>
+<button id="continue">❤️ Улантуу ❤️</button>
 
 </div>
-
 `;
 
-const photos=[
-
+const photos = [
 "images/photo1.jpg",
-
 "images/photo2.jpg",
-
 "images/photo3.jpg",
-
 "images/photo4.jpg"
-
 ];
 
-let index=0;
+let index = 0;
 
-setInterval(()=>{
+setInterval(() => {
 
 index++;
 
-if(index>=photos.length){
-
-index=0;
-
+if(index >= photos.length){
+index = 0;
 }
 
-document.getElementById("photo").src=photos[index];
+document.getElementById("photo").src = photos[index];
 
 },3000);
 
-document.getElementById("continue").onclick=showInvitation;
+document.getElementById("continue").onclick = showInvitation;
 
 }
 
-
-
 function showInvitation(){
 
-document.body.innerHTML=`
+document.body.innerHTML = `
+<div class="hearts"></div>
 
 <div class="container">
 
-<h1 class="title">
-
-❤️ Майя ❤️
-
-</h1>
+<h1>❤️ Майя ❤️</h1>
 
 <p class="text">
 
-Эгер жүрөгүңдө мага кичинекей болсо да орун калган болсо...
+Мен сени көргүм келет...
 
-Дүйшөмбү күнү,
+Эгер мүмкүн болсо,
 
-саат 21:00
+Дүйшөмбү күнү
 
-Аянтта жолугалы.
+🕘 Саат 21:00
 
-Мен сени күтөм. ❤️
+📍 Аянтта жолугалы.
+
+Мен сөзсүз сени күтөм.
+
+❤️ Келесиңби?
 
 </p>
 
-<button id="yesBtn">
+<div class="buttons">
 
-❤️ Мен сөзсүз келем ❤️
+<button id="yesBtn">❤️ Ооба ❤️</button>
 
-</button>
+<button id="noBtn">💔 Жок</button>
 
 </div>
 
+</div>
 `;
 
-document.getElementById("yesBtn").onclick=()=>{
+const noBtn = document.getElementById("noBtn");
 
-document.body.innerHTML=`
+noBtn.addEventListener("mouseover", () => {
+
+const x = Math.random() * (window.innerWidth - 150);
+const y = Math.random() * (window.innerHeight - 80);
+
+noBtn.style.position = "absolute";
+noBtn.style.left = x + "px";
+noBtn.style.top = y + "px";
+
+});
+
+document.getElementById("yesBtn").onclick = () => {
+
+document.body.innerHTML = `
+<div class="hearts"></div>
 
 <div class="container">
 
-<h1 class="title">
-
-❤️ Рахмат ❤️
-
-</h1>
+<h1>❤️ Рахмат ❤️</h1>
 
 <p class="text">
 
-Бул мен үчүн абдан маанилүү.
+Сенин "Ооба" дегениң мен үчүн эң чоң белек.
 
-Мен сени чыдамсыздык менен күтөм. ❤️
+Мен ошол күнү сени чыдамсыздык менен күтөм.
+
+❤️ Мен сени баалайм. ❤️
 
 </p>
 
 </div>
-
 `;
 
 };
