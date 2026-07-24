@@ -1,219 +1,97 @@
-/* ==========================
-   MAYA ❤️ Romantic Style
-========================== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: "Segoe UI", sans-serif;
+    font-family:"Segoe UI",sans-serif;
 }
 
 body{
     background:linear-gradient(180deg,#050816,#0b1120,#111827);
+    color:white;
     overflow:hidden;
-    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    color:white;
-}
-
-/* Контейнер */
-
-.container{
-
-    width:90%;
-    max-width:500px;
-
-    text-align:center;
-
-    padding:40px;
-
-    border-radius:30px;
-
-    backdrop-filter:blur(18px);
-
-    background:rgba(255,255,255,.08);
-
-    border:1px solid rgba(255,255,255,.15);
-
-    box-shadow:0 0 50px rgba(255,0,120,.25);
-
-}
-
-/* Башкы ат */
-
-.title{
-
-    font-size:55px;
-
-    color:#ff5b9f;
-
-    animation:fadeDown 2s;
-
-}
-
-/* Текст */
-
-.text{
-
-    margin-top:25px;
-
-    line-height:1.8;
-
-    font-size:20px;
-
-    color:#f3f3f3;
-
-    animation:fadeUp 2.5s;
-
-}
-
-/* Баскыч */
-
-button{
-
-    margin-top:45px;
-
-    padding:18px 45px;
-
-    border:none;
-
-    border-radius:50px;
-
-    background:#ff2d75;
-
-    color:white;
-
-    font-size:20px;
-
-    cursor:pointer;
-
-    transition:.4s;
-
-    animation:pulse 2s infinite;
-
-}
-
-button:hover{
-
-    transform:scale(1.08);
-
-    box-shadow:0 0 35px #ff2d75;
-
+    height:100vh;
 }
 
 /* Жылдыздар */
 
 .stars{
-
     position:fixed;
-
+    top:0;
+    left:0;
     width:100%;
-
     height:100%;
-
-    background-image:
-    radial-gradient(white 1px, transparent 1px);
-
+    background-image:radial-gradient(white 1px,transparent 1px);
     background-size:45px 45px;
-
     animation:starsMove 80s linear infinite;
-
-    z-index:-3;
-
+    z-index:-2;
 }
 
 /* Жүрөктөр */
 
 .hearts::before{
-
-content:"❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
-
-position:absolute;
-
-top:-10%;
-
-left:-20%;
-
-font-size:26px;
-
-opacity:.25;
-
-animation:hearts 18s linear infinite;
-
+    content:"❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
+    position:absolute;
+    top:-20%;
+    left:-10%;
+    font-size:24px;
+    opacity:.2;
+    animation:hearts 18s linear infinite;
 }
 
-/* Анимациялар */
+/* Контейнер */
 
-@keyframes pulse{
-
-0%{transform:scale(1);}
-50%{transform:scale(1.06);}
-100%{transform:scale(1);}
-
+.container{
+    width:90%;
+    max-width:520px;
+    padding:40px;
+    text-align:center;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 0 40px rgba(255,0,120,.25);
 }
 
-@keyframes fadeDown{
+/* Башкы ат */
 
-from{
-opacity:0;
-transform:translateY(-80px);
+.title{
+    font-size:50px;
+    color:#ff5b9f;
+    animation:fadeDown 1.5s;
 }
 
-to{
-opacity:1;
-transform:translateY(0);
+/* Текст */
+
+.text{
+    margin-top:20px;
+    font-size:20px;
+    line-height:1.8;
+    color:#f1f1f1;
+    animation:fadeUp 2s;
 }
 
+/* Баскыч */
+
+button{
+    margin-top:35px;
+    padding:18px 40px;
+    border:none;
+    border-radius:50px;
+    background:#ff2d75;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
 }
 
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(50px);
+button:hover{
+    transform:scale(1.07);
+    box-shadow:0 0 25px #ff2d75;
 }
 
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-@keyframes hearts{
-
-0%{
-
-transform:translateY(-100px);
-
-}
-
-100%{
-
-transform:translateY(120vh);
-
-}
-
-}
-
-@keyframes starsMove{
-
-from{
-
-background-position:0 0;
-
-}
-
-to{
-
-background-position:0 1500px;
-
-}
-
-}
 /* Сүрөт */
 
 #photo{
@@ -223,7 +101,7 @@ background-position:0 1500px;
     border-radius:20px;
     margin-top:20px;
     transition:1s;
-    box-shadow:0 0 35px rgba(255,255,255,.25);
+    box-shadow:0 0 30px rgba(255,255,255,.25);
 }
 
 /* Баскычтар */
@@ -233,7 +111,11 @@ background-position:0 1500px;
     justify-content:center;
     gap:15px;
     flex-wrap:wrap;
-    margin-top:30px;
+    margin-top:25px;
+}
+
+#musicBtn{
+    background:#7c3aed;
 }
 
 #yesBtn{
@@ -244,32 +126,49 @@ background-position:0 1500px;
     background:#555;
 }
 
-#musicBtn{
-    background:#7c3aed;
+/* Анимациялар */
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-60px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-/* Жолугушуу */
-
-.meeting{
-    margin-top:35px;
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-.meeting h2,
-.meeting h3{
-    margin:12px 0;
+@keyframes hearts{
+    from{
+        transform:translateY(-120px);
+    }
+    to{
+        transform:translateY(120vh);
+    }
 }
 
-.message p{
-    margin-top:15px;
-    line-height:1.8;
+@keyframes starsMove{
+    from{
+        background-position:0 0;
+    }
+    to{
+        background-position:0 1500px;
+    }
 }
 
-.message h2{
-    margin-top:25px;
-    color:#ff77aa;
-}
-
-/* Телефон үчүн */
+/* Телефон */
 
 @media(max-width:600px){
 
@@ -288,4 +187,5 @@ background-position:0 1500px;
 button{
     width:100%;
 }
+
 }
