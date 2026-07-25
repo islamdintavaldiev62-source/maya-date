@@ -1,153 +1,251 @@
-// ❤️ MAYA DATE WEBSITE
-
 const openBtn = document.getElementById("openBtn");
 
 openBtn.addEventListener("click", () => {
 
-    document.body.innerHTML = `
+document.body.innerHTML = `
+<div class="hearts"></div>
 
-    <div class="container">
+<div class="container">
 
-        <h1 class="title">Майя... ❤️</h1>
+<h1>❤️ Майя ❤️</h1>
 
-        <p id="typing" class="text"></p>
+<p id="typing" class="text"></p>
 
-        <button id="nextBtn">
-            ➜ Улантуу
-        </button>
+<button id="nextBtn">❤️ Улантуу ❤️</button>
 
-    </div>
+</div>
+`;
 
-    `;
+const message = `
 
-    const message = `
+❤️ Майя...
 
 Бул сайтты ачканың үчүн рахмат.
 
-Бул жөн гана чакыруу эмес...
-
+Бул жөн гана сайт эмес...
 Бул менин жүрөгүмдөн чыккан сөздөр.
 
-Эгер мен сени капа кылган болсом...
+Эгер мен сени капа кылган болсом,
+чын жүрөктөн кечирим сурайм.
 
-Чын жүрөктөн кечирим сурайм.
+Сен мен үчүн жөн гана адам эмессиң.
+Сен менин күнүмдү жарык кылган,
+жылмайышың менен маанайымды көтөргөн
+эң кымбат адамсың.
 
-Мен кеткен каталарымды түшүндүм.
+Сенин күлкүң,
+көз карашың,
+жаның мен үчүн абдан баалуу.
 
-Сен жөнүндө ойлобогон бир дагы күн болгон жок.
+Кээде адамдар жаңылышат.
+Мен да жаңылдым.
+Бирок бир нерсе өзгөргөн жок —
+сага болгон сезимим.
+
+Мен өткөндү өзгөртө албайм,
+бирок келечекти экөөбүз
+бирге кооз кыла алабыз деп ишенем.
 
 ❤️
 
 `;
 
-    let i = 0;
+let i = 0;
 
-    function typeWriter(){
+function typeWriter(){
 
-        if(i < message.length){
+if(i < message.length){
 
-            document.getElementById("typing").innerHTML += message.charAt(i);
+document.getElementById("typing").innerHTML += message.charAt(i);
 
-            i++;
+i++;
 
-            setTimeout(typeWriter,40);
+setTimeout(typeWriter,35);
 
-        }
+}
 
-    }
+}
 
-    typeWriter();
+typeWriter();
 
-    setTimeout(()=>{
-
-        document.getElementById("nextBtn").onclick = ()=>{
-
-            showGallery();
-
-        }
-
-    },1000);
+document.getElementById("nextBtn").onclick = showGallery;
 
 });
-
-
-// =====================
-// Сүрөттөр бөлүмү
-// =====================
-
-function showGallery(){
+function showGallery() {
 
 document.body.innerHTML = `
+<div class="hearts"></div>
 
 <div class="container">
 
-<h1 class="title">
+<h1>📸 Биздин эскерүүлөр ❤️</h1>
 
-Биз... ❤️
-
-</h1>
-
-<img id="photo"
-
-src="images/photo1.jpg"
-
-style="width:100%;
-border-radius:20px;
-margin-top:20px;
-box-shadow:0 0 30px rgba(255,255,255,.3);">
+<img id="photo" src="images/photo1.jpg">
 
 <p class="text">
-
-Ар бир сүрөт...
-
-Биздин эң сонун эскерүүбүз ❤️
-
+Ар бир сүрөт биздин эң сонун көз ирмемдерибизди эске салат.
+Ар бир көз ирмем мен үчүн абдан баалуу. ❤️
 </p>
 
-<button id="continue">
-
-Улантуу ❤️
-
-</button>
+<button id="continue">❤️ Улантуу ❤️</button>
 
 </div>
-
 `;
 
-const photos=[
-
+const photos = [
 "images/photo1.jpg",
-
 "images/photo2.jpg",
-
 "images/photo3.jpg",
-
-"images/photo4.jpg",
-
-"images/photo5.jpg"
-
+"images/photo4.jpg"
 ];
 
-let index=0;
+let index = 0;
 
-setInterval(()=>{
+setInterval(() => {
 
 index++;
 
-if(index>=photos.length){
-
-index=0;
-
+if(index >= photos.length){
+index = 0;
 }
 
-document.getElementById("photo").src=photos[index];
+document.getElementById("photo").src = photos[index];
 
 },3000);
 
-document.getElementById("continue").onclick=()=>{
+document.getElementById("continue").onclick = showInvitation;
 
-alert("4-бөлүктө жолугушууга чакыруу ачылат ❤️");
+}
+function showInvitation() {
+
+document.body.innerHTML = `
+<div class="hearts"></div>
+
+<div class="container">
+
+<h1>❤️ Майя ❤️</h1>
+
+<p class="text">
+
+Эгер жүрөгүңдө мага кичинекей болсо да орун калган болсо...
+
+Мен өткөндү өзгөртө албайм,
+бирок келечекти экөөбүз
+бирге кооз кыла алабыз деп ишенем.
+
+📅 Дүйшөмбү
+
+🕘 Саат 21:00
+
+📍 Аянт
+
+Сени ошол жерде чыдамсыздык менен күтөм.
+
+❤️ Келесиңби?
+
+</p>
+
+<div class="buttons">
+<button id="yesBtn">❤️ Ооба ❤️</button>
+<button id="noBtn">💔 Жок</button>
+</div>
+
+</div>
+`;
+
+document.getElementById("yesBtn").onclick = () => {
+
+document.body.innerHTML = `
+<div class="hearts"></div>
+
+<div class="container">
+
+<h1>❤️ Рахмат ❤️</h1>
+
+<p class="text">
+
+Сенин «Ооба» дегениң
+мен үчүн эң чоң белек болду.
+
+Мен ошол күнү сени
+чыдамсыздык менен күтөм.
+
+❤️
+
+</p>
+
+</div>
+`;
+
+};
+
+const noBtn = document.getElementById("noBtn");
+
+let count = 0;
+
+const texts = [
+"🥺 Дагы ойлончу...",
+"❤️ Сураныч...",
+"😅 Мени кармай албайсың...",
+"💖 Акыркы жолу сурайм...",
+"🥰 Макул болчу..."
+];
+
+noBtn.addEventListener("mouseover", () => {
+
+if(count >= 5){
+
+noBtn.innerHTML = "❤️ Макул, барам ❤️";
+noBtn.style.position = "static";
+noBtn.style.background = "#28a745";
+
+noBtn.onclick = () => {
+document.getElementById("yesBtn").click();
+};
+
+return;
 
 }
 
+const x = Math.random() * (window.innerWidth - 220);
+const y = Math.random() * (window.innerHeight - 80);
+
+noBtn.style.position = "fixed";
+noBtn.style.left = x + "px";
+noBtn.style.top = y + "px";
+
+noBtn.innerHTML = texts[count];
+
+count++;
+
+});
+
 }
+// ❤️ Учкан жүрөктөр
+function createHearts() {
+
+    const hearts = document.querySelector(".hearts");
+
+    if (!hearts) return;
+
+    setInterval(() => {
+
+        const heart = document.createElement("span");
+
+        heart.innerHTML = "❤️";
+
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.fontSize = (15 + Math.random() * 20) + "px";
+        heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+        hearts.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 10000);
+
+    }, 300);
+
+}
+
+createHearts();
