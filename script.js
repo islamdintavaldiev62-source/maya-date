@@ -194,37 +194,56 @@ const moveButton = () => {
     noBtn.innerHTML = texts[count];
     count++;
 };
+const noBtn = document.getElementById("noBtn");
 
-noBtn.addEventListener("mouseover", moveButton); // ПК
-noBtn.addEventListener("touchstart", (e) => {    // Телефон
-    e.preventDefault();
-    moveButton();
-});
+let count = 0;
 
-if(count >= 5){
+const texts = [
+"🥺 Дагы ойлончу...",
+"❤️ Сураныч...",
+"😅 Мени кармай албайсың...",
+"💖 Акыркы жолу сурайм...",
+"🥰 Макул болчу..."
+];
 
-noBtn.innerHTML = "❤️ Макул, барам ❤️";
-noBtn.style.position = "static";
-noBtn.style.background = "#28a745";
+function moveButton(e) {
 
-noBtn.onclick = () => {
-document.getElementById("yesBtn").click();
-};
+    if (e) e.preventDefault();
 
-return;
+    if (count >= 5) {
+        noBtn.innerHTML = "❤️ Макул, барам ❤️";
+        noBtn.style.position = "static";
+        noBtn.style.background = "#28a745";
 
+        noBtn.onclick = () => {
+            document.getElementById("yesBtn").click();
+        };
+        return;
+    }
+
+    const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+    const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+
+    const x = Math.random() * Math.max(maxX, 50);
+    const y = Math.random() * Math.max(maxY, 50);
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    noBtn.innerHTML = texts[count];
+    count++;
 }
 
-const x = Math.random() * (window.innerWidth - 220);
-const y = Math.random() * (window.innerHeight - 80);
+// 💻 Компьютер
+noBtn.addEventListener("mouseover", moveButton);
 
-noBtn.style.position = "fixed";
-noBtn.style.left = x + "px";
-noBtn.style.top = y + "px";
+// 📱 Телефон
+noBtn.addEventListener("touchstart", moveButton, { passive: false });
 
-noBtn.innerHTML = texts[count];
+// Эгер touchstart иштебесе
+noBtn.addEventListener("click", moveButton);
 
-count++;
 
 });
 
