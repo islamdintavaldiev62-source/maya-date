@@ -17,13 +17,18 @@ body{
 .container{
     width:90%;
     max-width:600px;
+    max-height:90vh;
+    overflow-y:auto;
+
     background:#fff;
-    padding:40px;
+    padding:25px;
     border-radius:25px;
     text-align:center;
     box-shadow:0 15px 35px rgba(0,0,0,.2);
+
     position:relative;
     z-index:10;
+} 
 }
 
 h1{
@@ -95,4 +100,34 @@ img{
     to{
         transform:translateY(110vh);
     }
+}
+@media (max-width: 768px){
+
+    .container{
+        width:92%;
+        padding:20px;
+        max-height:90vh;
+    }
+
+    h1{
+        font-size:30px;
+    }
+
+    .text{
+        font-size:17px;
+        line-height:1.6;
+    }
+
+    button{
+        width:100%;
+        font-size:18px;
+        padding:15px;
+    }
+
+    img{
+        width:100%;
+        height:auto;
+        max-height:320px;
+    }
+
 }
