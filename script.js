@@ -1,36 +1,153 @@
-const message = `
+// ❤️ MAYA DATE WEBSITE
 
-❤️ Майя...
+const openBtn = document.getElementById("openBtn");
 
-Бул сайт жөн гана бир нече сап сөз эмес.
+openBtn.addEventListener("click", () => {
 
-Бул — менин жүрөгүмдөн чыккан сезимдер.
+    document.body.innerHTML = `
 
-Балким, мен сени капа кылдым.
+    <div class="container">
 
-Балким, каталарымды кеч түшүндүм.
+        <h1 class="title">Майя... ❤️</h1>
 
-Бирок бир нерсени түшүндүм...
+        <p id="typing" class="text"></p>
 
-Сен мен үчүн жөн гана адам эмессиң.
+        <button id="nextBtn">
+            ➜ Улантуу
+        </button>
 
-Сен менен өткөргөн ар бир көз ирмем мен үчүн эң кымбат эскерүү болуп калды.
+    </div>
 
-Сенин күлкүңдү,
-үнүңдү,
-көздөрүңдү,
-жаныңда болгон учурларды абдан сагындым.
+    `;
 
-Мен өткөндү өзгөртө албайм.
+    const message = `
 
-Бирок бүгүн сага бир гана нерсени айткым келет...
+Бул сайтты ачканың үчүн рахмат.
 
-❤️ Чын жүрөктөн кечирим сурайм.
+Бул жөн гана чакыруу эмес...
 
-Эгер жүрөгүңдө мага кичинекей болсо да орун калган болсо...
+Бул менин жүрөгүмдөн чыккан сөздөр.
 
-Кел...
+Эгер мен сени капа кылган болсом...
 
-Тагдырга дагы бир мүмкүнчүлүк берели.
+Чын жүрөктөн кечирим сурайм.
+
+Мен кеткен каталарымды түшүндүм.
+
+Сен жөнүндө ойлобогон бир дагы күн болгон жок.
+
+❤️
 
 `;
+
+    let i = 0;
+
+    function typeWriter(){
+
+        if(i < message.length){
+
+            document.getElementById("typing").innerHTML += message.charAt(i);
+
+            i++;
+
+            setTimeout(typeWriter,40);
+
+        }
+
+    }
+
+    typeWriter();
+
+    setTimeout(()=>{
+
+        document.getElementById("nextBtn").onclick = ()=>{
+
+            showGallery();
+
+        }
+
+    },1000);
+
+});
+
+
+// =====================
+// Сүрөттөр бөлүмү
+// =====================
+
+function showGallery(){
+
+document.body.innerHTML = `
+
+<div class="container">
+
+<h1 class="title">
+
+Биз... ❤️
+
+</h1>
+
+<img id="photo"
+
+src="images/photo1.jpg"
+
+style="width:100%;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0 0 30px rgba(255,255,255,.3);">
+
+<p class="text">
+
+Ар бир сүрөт...
+
+Биздин эң сонун эскерүүбүз ❤️
+
+</p>
+
+<button id="continue">
+
+Улантуу ❤️
+
+</button>
+
+</div>
+
+`;
+
+const photos=[
+
+"images/photo1.jpg",
+
+"images/photo2.jpg",
+
+"images/photo3.jpg",
+
+"images/photo4.jpg",
+
+"images/photo5.jpg"
+
+];
+
+let index=0;
+
+setInterval(()=>{
+
+index++;
+
+if(index>=photos.length){
+
+index=0;
+
+}
+
+document.getElementById("photo").src=photos[index];
+
+},3000);
+
+document.getElementById("continue").onclick=()=>{
+
+alert("4-бөлүктө жолугушууга чакыруу ачылат ❤️");
+
+}
+
+}
