@@ -210,7 +210,6 @@ noBtn.addEventListener("click", moveButton);
 }
 // ❤️ Учкан жүрөктөр
 function createHearts() {
- ...
     const hearts = document.querySelector(".hearts");
 
     if (!hearts) return;
