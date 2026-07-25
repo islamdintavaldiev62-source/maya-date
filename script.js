@@ -159,7 +159,6 @@ document.body.innerHTML = `
 createHearts();
 
 };
-
 const noBtn = document.getElementById("noBtn");
 
 let count = 0;
@@ -172,7 +171,35 @@ const texts = [
 "🥰 Макул болчу..."
 ];
 
-noBtn.addEventListener("mouseover", () => {
+const moveButton = () => {
+
+    if (count >= 5) {
+        noBtn.innerHTML = "❤️ Макул, барам ❤️";
+        noBtn.style.position = "static";
+        noBtn.style.background = "#28a745";
+
+        noBtn.onclick = () => {
+            document.getElementById("yesBtn").click();
+        };
+        return;
+    }
+
+    const x = Math.random() * (window.innerWidth - 220);
+    const y = Math.random() * (window.innerHeight - 80);
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    noBtn.innerHTML = texts[count];
+    count++;
+};
+
+noBtn.addEventListener("mouseover", moveButton); // ПК
+noBtn.addEventListener("touchstart", (e) => {    // Телефон
+    e.preventDefault();
+    moveButton();
+});
 
 if(count >= 5){
 
