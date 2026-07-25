@@ -138,13 +138,7 @@ document.body.innerHTML = `
 
 </div>
 `;
-document.getElementById("noBtn").onclick = moveNoButton;
-
 document.getElementById("yesBtn").onclick = () => {
-
-    document.body.innerHTML = `
-    ...
-
 
 document.body.innerHTML = `
 <div class="hearts"></div>
@@ -154,19 +148,15 @@ document.body.innerHTML = `
 <h1>❤️ Рахмат ❤️</h1>
 
 <p class="text">
+Сенин «Ооба» дегениң мен үчүн эң чоң белек болду.
 
-Сенин «Ооба» дегениң
-мен үчүн эң чоң белек болду.
-
-Мен ошол күнү сени
-чыдамсыздык менен күтөм.
-
-❤️
-
+Мен ошол күнү сени чыдамсыздык менен күтөм. ❤️
 </p>
 
 </div>
 `;
+
+createHearts();
 
 };
 
