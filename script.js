@@ -138,8 +138,13 @@ document.body.innerHTML = `
 
 </div>
 `;
+document.getElementById("noBtn").onclick = moveNoButton;
 
 document.getElementById("yesBtn").onclick = () => {
+
+    document.body.innerHTML = `
+    ...
+
 
 document.body.innerHTML = `
 <div class="hearts"></div>
