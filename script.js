@@ -198,7 +198,6 @@ function moveButton(e) {
     noBtn.innerHTML = texts[count];
     count++;
 }
-
 // 💻 Компьютер
 noBtn.addEventListener("mouseover", moveButton);
 
@@ -207,6 +206,7 @@ noBtn.addEventListener("touchstart", moveButton, { passive: false });
 
 // Эгер touchstart иштебесе
 noBtn.addEventListener("click", moveButton);
+
 }
 // ❤️ Учкан жүрөктөр
 function createHearts() {
